@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+import { useAppContext } from "./Context/AppContextProvider";
+import {
+  HideItemActions,
+  UnHideItemActions,
+} from "./Context/AppActionsCreators";
+import { FirstSlide } from "./Components/FirstSlide/FirstSlide";
+import { SecondSlide } from "./Components/SecondSlide/SecondSlide";
 
 function App() {
+  const { state, dispatch } = useAppContext();
+  useEffect(() => {
+    const showTimer = setTimeout(() => {
+      dispatch(HideItemActions());
+    }, 2000);
+    const showTimer2 = setTimeout(() => {
+      dispatch(UnHideItemActions());
+    }, 2100);
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(showTimer2);
+    };
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {state.visibleIn && (
+        <div>
+          <FirstSlide />
+        </div>
+      )}
+      <div>
+        <SecondSlide />
+      </div>
     </div>
   );
 }
