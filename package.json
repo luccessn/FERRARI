@@ -1,14 +1,13 @@
 {
   "name": "frarri",
   "version": "1.0.0",
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luccessn/FERRARI.git"
   },
   "scripts": {
     "start-server": "cd server && npm start",
-    "start-client": "cd app && npm start",
+    "start-client": "cd reactapp && npm start",
     "dev": "concurrently \"npm run start-server\" \"npm run start-client\""
   },
   "dependencies": {
