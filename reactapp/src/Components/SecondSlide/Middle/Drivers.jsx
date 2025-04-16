@@ -3,13 +3,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useAppContext } from "../../../Context/AppContextProvider";
 import { motion } from "framer-motion";
-import { useFetchData } from "../../../HOC/useFetchData";
 import Spline from "@splinetool/react-spline";
+import { Imgs } from "../../../Constants/Imgs";
 
 export const Drivers = () => {
-  const [info, error, isLoading] = useFetchData(
-    "http://localhost:3001/getImages"
-  );
+  // const [info, error, isLoading] = useFetchData(
+  //   "http://localhost:3001/getImages"
+  // );
   const { state } = useAppContext();
   const sectionRef = useRef(null);
   const frlogoRef = useRef(null);
@@ -153,17 +153,18 @@ export const Drivers = () => {
         <div ref={hamiltonRef} className="flex flex-col">
           <h1 className="sm:text-3xl mmd:text-4xl font-bold">
             <img
-              src={info[0]?.hamilton?.propf}
+              src={Imgs.hamilton.propf}
               alt=""
               className=" w-[200px] smm:w-[250px] sm:w-[300px]  xl:w-[400px]  "
             />
             𝑳𝒆𝒘𝒊𝒔 𝑯𝒂𝒎𝒊𝒍𝒕𝒐𝒏
           </h1>
         </div>
+
         <div ref={leclercRef} className="flex flex-col">
           <h1 className="sm:text-3xl mmd:text-4xl font-bold">
             <img
-              src={info[0]?.leclerc?.propf}
+              src={Imgs.leclerc.propf}
               alt=""
               className=" w-[192px]  smm:w-[240px] sm:w-[290px] md:w-[300px]  xl:w-[400px]  "
             />
@@ -196,7 +197,7 @@ export const Drivers = () => {
         >
           <div ref={hamlimg}>
             <img
-              src={info[0]?.hamilton?.ham1}
+              src={Imgs.hamilton.hamilton1}
               alt=""
               className="w-[1100px] lg:w-[900px] rounded-sm"
             />
@@ -209,7 +210,7 @@ export const Drivers = () => {
         >
           <div ref={hamlecl}>
             <img
-              src={info[0]?.team?.hamlecl}
+              src={Imgs.team.hamlecl}
               alt=""
               className="w-[1100px] lg:w-[900px] rounded-sm"
             />
@@ -224,7 +225,7 @@ export const Drivers = () => {
             <img
               alt="NextUI Album Cover"
               className="w-[1100px] lg:w-[900px] rounded-md"
-              src={info[0]?.leclerc?.lecl1}
+              src={Imgs.leclerc.lecl1}
             />
           </div>
         </motion.div>

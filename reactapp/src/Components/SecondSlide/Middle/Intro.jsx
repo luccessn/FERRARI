@@ -6,15 +6,16 @@ import { motion } from "framer-motion";
 //videos
 import videoenz1 from "../../../Videos/videonz1.mp4";
 import videoenz2 from "../../../Videos/videonz2.mp4";
-import { useFetchData } from "../../../HOC/useFetchData";
+// import { useFetchData } from "../../../HOC/useFetchData";
 import { Spotlight } from "../../UI/Spotlight";
+import { Imgs } from "../../../Constants/Imgs";
 gsap.registerPlugin(ScrollTrigger);
 export const Intro = () => {
   const { state } = useAppContext();
   //fetch
-  const [info, error, isLoading] = useFetchData(
-    "http://localhost:3001/getImages"
-  );
+  // const [info, error, isLoading] = useFetchData(
+  //   "http://localhost:3001/getImages"
+  // );
   //gsap
   const sectionRef = useRef(null);
   const firstvdRef = useRef(null);
@@ -96,9 +97,9 @@ export const Intro = () => {
       };
     }
   }, [state.visibleOut]);
-  if (error) {
-    return <h1>ER: {error}</h1>;
-  }
+  // if (error) {
+  //   return <h1>ER: {error}</h1>;
+  // }
   return (
     <div
       ref={sectionRef}
@@ -153,7 +154,7 @@ export const Intro = () => {
             <img
               className=" rounded-md h-[500px] sm:h-[700px] md:h-[800px] lg:h-[900px] xl:h-[1000px] w-full object-cover"
               alt=""
-              src={info[0]?.ferrari?.frenzo}
+              src={Imgs.frenzo}
             />
           </div>
         </div>

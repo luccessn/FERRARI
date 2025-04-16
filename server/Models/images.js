@@ -24,5 +24,5 @@ const ImagesSchema = new mongosee.Schema({
   },
 });
 
-const ImagesModel = mongosee.model("images", ImagesSchema);
+const ImagesModel = mongosee.model("images", ImagesSchema, "ferrari.images");
 module.exports = ImagesModel;

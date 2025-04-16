@@ -4,12 +4,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useAppContext } from "../../../Context/AppContextProvider";
 import { motion } from "framer-motion";
-import { useFetchData } from "../../../HOC/useFetchData";
+// import { useFetchData } from "../../../HOC/useFetchData";
 import Aurora from "../../UI/Aura";
+import { Imgs } from "../../../Constants/Imgs";
 export const BolidTeam = () => {
-  const [info, error, isLoading] = useFetchData(
-    "http://localhost:3001/getImages"
-  );
+  // const [info, error, isLoading] = useFetchData(
+  //   "http://localhost:3001/getImages"
+  // );
   const goYT = () => {
     window.open(
       "https://www.youtube.com/watch?v=cB6uA-s3bHc&t=11900s",
@@ -164,17 +165,17 @@ export const BolidTeam = () => {
           <div ref={teamRef1} className="relative -top-28 xl:-top-20 xxl:top-0">
             <img
               alt=""
-              src={info[0]?.team?.teamF1}
+              src={Imgs.team.teamF1}
               className=" w-[800px] ssm:h-[150px]  smm:h-[200px] smm:w-[900px] sm:h-[250px] mmd:h-[300px] lg:h-[350px] xl:w-[700px] xl:h-[450px] xxl:w-[800px] xxl:h-[500px] "
             />
           </div>
           <div ref={teamRef2} className="relative -top-44 lg:top-0">
-            <img src={info[0]?.team?.teamF2} alt="" />
+            <img src={Imgs.team.teamf2} alt="" />
           </div>
         </div>
         <div ref={f25Ref}>
           <img
-            src={info[0]?.hamilton?.hamf252}
+            src={Imgs.hamilton.f25}
             alt=""
             className="   xxxl:h-[500px] w-[200px] h-[150px] ssm:w-[250px] ssm:h-[150px]  smm:w-[400px] smm:h-[250px] md:h-[300px] md:w-[450px]  lg:w-[550px] lg:h-[300px] xl:w-[650px] xxl:w-[750px] xl:h-[450px] xxxl:w-[800px] "
           />
@@ -185,14 +186,14 @@ export const BolidTeam = () => {
               <img
                 alt="NextUI Album Cover"
                 className="md:w-[800px] w-[950px] lg:h-[400px] h-[180px] ssm:h-[220px]  smm:h-[280px]  md:h-[300px]  xxl:h-[500px] z-10 "
-                src={info[0]?.leclerc?.leclf251}
+                src={Imgs.leclerc.leclf25}
               />
             </div>
             <div ref={hamf25Ref} className="">
               <img
                 alt="NextUI Album Cover"
                 className="  w-[800px] lg:h-[450px] h-[150px] ssm:h-[200px] smm:h-[250px] sm:h-[300px] md:h-[350px]  xxl:h-[500px] "
-                src={info[0]?.hamilton?.hamf251}
+                src={Imgs.hamilton.hamf25}
               />
             </div>
           </div>
